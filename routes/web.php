@@ -44,12 +44,19 @@ Route::get('/brandForceDelete/{id}', [HelperController::class, "brandForceDelete
 
 Route::resource('/image', ImageController::class);
 
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // show users using ORM
     $users = User::all();
 
     // display users using query builder
     // $users = DB::table('users')->get();
-    return view('dashboard', compact('users'));
+    return view('admin.dashboard', compact('users'));
 })->name('dashboard');
 
+
+
+//  backend
+Route::view('back', 'layouts.backend.app');
