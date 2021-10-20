@@ -1,21 +1,12 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('All Brands') }}
-            
-            <strong class="float-right"> 
-                Total Brands
-                <span class="badge badge-danger"></span>
-            </strong>
-        </h2>
-    </x-slot>
+@extends('layouts.backend.app')
 
+@section('content')
     <div class="py-12">
         <div class="container-fluid">
             <div class="row">                            
 
                 {{-- all brands --}}        
-                <div class="col-md-7">
+                <div class="col-md-8 col-xl-8 col-sm-12">
                     <div class="card">
                         <div class="card-header text-center bg-primary text-white">
                           All Brands
@@ -80,7 +71,7 @@
                 {{-- end all brands --}}
 
                 {{-- add brnad --}}
-                <div class="col-md-5">
+                <div class="col-md-4 col-xl-4 col-sm-12">
                     <div class="card ">
                         <div class="card-header bg-success text-center text-white">
                           Add Brand
@@ -132,7 +123,7 @@
               <div class="containear-fluid">
                 <div class="row">                            
                   <div class="col-md-1"></div>
-                    <div class="col-md-10">
+                    <div class="col-md-10 col-xl-10 col-sm-12">
                         <div class="card">
                             <div class="card-header text-center bg-warning text-white">
                               Trash List
@@ -197,4 +188,4 @@
             {{-- end Trash LIst --}}              
 
     </div>
-</x-app-layout>
+@endsection

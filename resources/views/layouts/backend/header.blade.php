@@ -19,20 +19,12 @@
       </div>
 
       <div class="navbar-right ">
-        <ul class="nav navbar-nav">
-          <!-- Github Link Button -->
-          <li class="github-link mr-3">
-            <a class="btn btn-outline-secondary btn-sm" href="https://github.com/tafcoder/sleek-dashboard" target="_blank">
-              <span class="d-none d-md-inline-block mr-2">Source Code</span>
-              <i class="mdi mdi-github-circle"></i>
-            </a>
-
-          </li>
-          <li class="dropdown notifications-menu">
+        <ul class="nav navbar-nav">                  
+          {{-- <li class="dropdown notifications-menu">
             <button class="dropdown-toggle" data-toggle="dropdown">
               <i class="mdi mdi-bell-outline"></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-right">
+            </button> --}}
+            {{-- <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-header">You have 5 notifications</li>
               <li>
                 <a href="#">
@@ -67,20 +59,20 @@
               <li class="dropdown-footer">
                 <a class="text-center" href="#"> View All </a>
               </li>
-            </ul>
+            </ul> --}}
           </li>
           <!-- User Account -->
           <li class="dropdown user-menu">
             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <img src="{{ asset('backend/assets/img/user/user.png') }}" class="user-image" alt="User Image" />
-              <span class="d-none d-lg-inline-block">Abdus Salam</span>
+              <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right">
               <!-- User image -->
               <li class="dropdown-header">
                 <img src="{{ asset('backend/assets/img/user/user.png') }}" class="img-circle" alt="User Image" />
                 <div class="d-inline-block">
-                  Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                   {{ Auth::user()->name }} <small class="pt-1">{{ Auth::user()->email }}</small>
                 </div>
               </li>
 

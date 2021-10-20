@@ -1,21 +1,12 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit Brand') }}
-            
-            <strong class="float-right"> 
-                Total Brands
-                <span class="badge badge-danger"></span>
-            </strong>
-        </h2>
-    </x-slot>
+@extends('layouts.backend.app')
 
+@section('content')
     <div class="py-12">
         <div class="container-fluid">
             <div class="row">                            
-                <div class="col-md-3"></div>
+                
                 {{-- edit brnad --}}
-                <div class="col-md-6">
+                <div class="col-md-10 col-lg-10 col-sm-12">
                     <div class="card ">
                         <div class="card-header bg-success text-center text-white">
                           Edit Brand
@@ -72,4 +63,5 @@
             </div>
         </div> 
     </div>
-</x-app-layout>
+
+@endsection
