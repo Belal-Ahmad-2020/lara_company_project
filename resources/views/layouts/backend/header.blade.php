@@ -64,7 +64,7 @@
           <!-- User Account -->
           <li class="dropdown user-menu">
             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <img src="{{ asset('backend/assets/img/user/user.png') }}" class="user-image" alt="User Image" />
+              <img src="{{ Auth::user()->profile_photo_url }}" class="user-image" alt="User Image" />
               <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right">
@@ -82,8 +82,8 @@
                 </a>
               </li>
               <li>
-                <a href="email-inbox.html">
-                  <i class="mdi mdi-email"></i> Message
+                <a href="{{ route('password.change') }}">
+                  <i class="mdi mdi-email"></i> Change Password
                 </a>
               </li>
               <li>

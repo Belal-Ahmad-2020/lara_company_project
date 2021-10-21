@@ -59,7 +59,15 @@
               </div>
             </div>
             <div class="card-body p-5">
-
+                {{-- alert --}}
+                @if (session('success'))                                                              
+                <div class="alert alert-success alert-dismissible fade show  mb-2" role="alert">                               
+                    <small>{{ session('success') }}</small>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>                                  
+                </div>
+                @endif
               <h4 class="text-dark mb-5 text-center">Sign In</h4>
                 <div class="message">
                     @if (session('status'))

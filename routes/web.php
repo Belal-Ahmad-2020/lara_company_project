@@ -14,11 +14,12 @@ use App\Http\Controllers\FrontEndPagesController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Models\Brand;
 use App\Models\About;
 use App\Models\Image;
 use App\Models\Service;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,23 +64,27 @@ Route::resource('/slider', SliderController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // show users using ORM
-    $users = User::all();
+    //$users = User::all();
 
     // display users using query builder
     // $users = DB::table('users')->get();
-    return view('admin.dashboard', compact('users'));
+    return view('admin.dashboard');
 })->name('dashboard');
 
 
 
 //  backend
-Route::view('back', 'layouts.backend.app');
-
 // contact information 
 Route::resource('contact', ContactController::class);
 
+// change password
+Route::get('change-password', [ChangePasswordController::class, 'index'])->name("password.change");
+
+// update password
+Route::get('password/update', [ChangePasswordController::class, 'update'])->name("password.update");
+
+
 /////////////////////// frontend 
-Route::view('front', 'layouts.frontend.app');
 
 // about us page
 Route::resource('/about', AboutController::class);
@@ -94,11 +99,12 @@ Route::get('/portfolio', [FrontEndPagesController::class, 'portfolio'])->name('p
 Route::get('/contactInfo', [FrontEndPagesController::class, 'contactInfo'])->name('contact');
 
 // contact message
-Route::get('/contactMessage', [ContactMessageController::class, 'index'])->name('contactMessage');
+// Route::get('/contactMessage', [ContactMessageController::class, 'index'])->name('contactMessage');
 
 // contact message create
-Route::get('/contactMessage', [ContactMessageController::class, 'create'])->name('create');
+// Route::get('/contactMessage', [ContactMessageController::class, 'create'])->name('create');
 
 
 // contact Message Delete
-Route::post('/contactMessage/delete/{id}', [ContactMessageController::class, 'delete'])->name('delete');
+// Route::post('/contactMessage/delete/{id}', [ContactMessageController::class, 'delete'])->name('delete');
+
