@@ -83,6 +83,11 @@ Route::get('change-password', [ChangePasswordController::class, 'index'])->name(
 // update password
 Route::get('password/update', [ChangePasswordController::class, 'update'])->name("password.update");
 
+// Display Profile Page
+Route::get('profile/index', [ChangePasswordController::class, 'profile'])->name("profile.index");
+
+// Update Profile
+Route::get('profile/update', [ChangePasswordController::class, 'update'])->name("profile.update");
 
 /////////////////////// frontend 
 

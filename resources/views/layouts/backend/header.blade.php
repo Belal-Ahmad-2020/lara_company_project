@@ -77,7 +77,7 @@
               </li>
 
               <li>
-                <a href="profile.html">
+                <a href="{{ route('profile.index') }}">
                   <i class="mdi mdi-account"></i> My Profile
                 </a>
               </li>

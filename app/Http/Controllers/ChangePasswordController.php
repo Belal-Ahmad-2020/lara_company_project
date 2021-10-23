@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\User;
 class ChangePasswordController extends Controller
 {
-    //
+    // change password index page
     function index() {
         return view('admin.body.change-password');
     }
 
+    // update password
     function update(Request $req) {
 
         $req->validate([
@@ -32,9 +33,18 @@ class ChangePasswordController extends Controller
             return redirect()->route('login')->with('success', 'Password Changed Successfully!');
         }
         else {
-            return redirect()->back()->with('error', "Please try again!");
+            // return redirect()->back()->with('error', "Please try again!");
 
         }
         
     }
+
+
+
+    // update Profile
+    function profile(Request $req) {
+        $user = Auth::user()::all();        
+        return view('admin.body.change-profile');   
+    }    
+
 }
