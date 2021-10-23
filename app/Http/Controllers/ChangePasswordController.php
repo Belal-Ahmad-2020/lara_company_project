@@ -33,7 +33,7 @@ class ChangePasswordController extends Controller
             return redirect()->route('login')->with('success', 'Password Changed Successfully!');
         }
         else {
-            // return redirect()->back()->with('error', "Please try again!");
+            return redirect()->back()->with('error', "Please try again!");
 
         }
         
